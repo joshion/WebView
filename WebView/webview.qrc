@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/WebView">
+        <file>Resources/index.html</file>
+    </qresource>
+</RCC>
