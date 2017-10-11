@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/WebView">
+        <file>Resources/qwebchannel.js</file>
         <file>Resources/index.html</file>
     </qresource>
 </RCC>

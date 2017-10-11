@@ -15,7 +15,8 @@ signals:
     void func(const QString&);
 
 private slots:
-    void onTitleChange(const QString&);
+    void onTitleChanged(const QString&);
+    void on_pushButton_clicked();
 private:
     Ui::WebViewClass ui;
     WebViewPrivate *m_pPrivate;
