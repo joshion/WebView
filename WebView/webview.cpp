@@ -13,14 +13,18 @@ private:
     WebViewPrivate(QObject *parent = nullptr) {};
     ~WebViewPrivate() {};
 
+signals:
+    void callJs(const QVariant&);
+
 public slots:
-    void func();
+    void func(const QString& data);
 
 };
 
-void WebViewPrivate::func()
+void WebViewPrivate::func(const QString& data )
 {
-    QMessageBox::warning(nullptr, "Qt Warning", "call c++ function from js", QMessageBox::NoButton, QMessageBox::NoButton, QMessageBox::NoButton);
+    QMessageBox::warning(nullptr, "Qt Warning", "call c++ function from js, and data is \n" + data,
+        QMessageBox::NoButton, QMessageBox::NoButton, QMessageBox::NoButton);
 }
 
 WebView::WebView(QWidget *parent)
@@ -47,4 +51,9 @@ void WebView::onTitleChanged(const QString &str)
 void WebView::on_pushButton_clicked()
 {
     ui.view->page()->runJavaScript("callByCpp()");
+}
+
+void WebView::on_pushButton_2_clicked()
+{
+    emit m_pPrivate->callJs("hello Js");
 }

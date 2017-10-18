@@ -7,21 +7,25 @@
 <script type="text/javascript">
     new QWebChannel(qt.webChannelTransport, function(channel) {
         window.webView = channel.objects.webView;
+
+        webView.callJs.connect(function(data){
+            alert("call js function by qt signal, and the data is \n" + data);
+        });
     });
 
-    function tryToRegister() {
-            window.webView.func();
+    function callCPlusPlus() {
+            window.webView.func("hello c++");
     }
 
     function callByCpp() {
-        alert("call js function by c++");
+        alert("call js function by qt runJavaScript.");
     }
     
 </script>
 </head>
 <body>
     <div id="main_pannel">
-        <input type="submit" name="button" id="button" value="Sign up" onclick="tryToRegister()"></input>
+        <input type="submit" name="button" id="button" value="Js call C++" onclick="callCPlusPlus()"></input>
     </div>
 </body>
 </html>

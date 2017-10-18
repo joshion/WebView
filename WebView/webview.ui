@@ -19,7 +19,14 @@
      <item>
       <widget class="QPushButton" name="pushButton">
        <property name="text">
-        <string>Qt Button</string>
+        <string>Qt_RunJavaScript</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="text">
+        <string>Qt_Signal</string>
        </property>
       </widget>
      </item>

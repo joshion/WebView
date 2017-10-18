@@ -11,12 +11,10 @@ class WebView : public QWidget
 public:
     WebView(QWidget *parent = Q_NULLPTR);
 
-signals:
-    void func(const QString&);
-
 private slots:
     void onTitleChanged(const QString&);
     void on_pushButton_clicked();
+    void on_pushButton_2_clicked();
 private:
     Ui::WebViewClass ui;
     WebViewPrivate *m_pPrivate;
